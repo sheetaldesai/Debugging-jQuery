@@ -12,21 +12,26 @@
 				$(this).css('color', 'black');
 			})
 
-			$('a').click(function(){
-				alert("we don't actually serve pizza...");
+			$('a').click(function(){				
+				alert("Thank you for your order!");
 			})
 
 			$('img').click(function(){
-				$(this).slideUp();
+				$(this).slideUp("slow");
 			})
 
 			$('h5').click(function(){
-				$('img').slideDown();
+				$('img').slideDown("slow");
 			})
 
 			$('button').click(function(){
-				var result = $('input:checked').val()  
-				alert("Thank you for your input, we like " + result + " too!");
+				var result = $('input:checked').val();  
+				if (result === undefined) {
+					alert("Please select one of the options.");
+				}
+				else {
+					alert("Thank you for your input, we like " + result + " too!");
+				}
 			})
 
 
